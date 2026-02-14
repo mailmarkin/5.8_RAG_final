@@ -5,3 +5,26 @@ packages = ["cargo", "glibcLocales", "libiconv", "libxcrypt", "rustc", "unzip"]
 
 [agent]
 expertMode = true
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "RAG Assistant (OpenAI)"
+
+[[workflows.workflow]]
+name = "RAG Assistant (OpenAI)"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd /home/runner/workspace/5-8-final/assistant_api && python3 app.py"
+
+[workflows.workflow.metadata]
+outputType = "console"
