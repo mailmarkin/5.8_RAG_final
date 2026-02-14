@@ -17,4 +17,3 @@ venv/
 *.sqlite3
 chroma_data/
 .cache/
-replit.md
